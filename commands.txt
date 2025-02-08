@@ -1,0 +1,24 @@
+# IMAGES
+docker images - показывает существующие образы
+
+
+
+# CONTAINERS
+
+# просмотр
+
+docker ps - показывает список запущенных контейнеров
+docker ps -a - показывает список всех контейнеров (запущенных и нет)
+# запуск
+
+docker run <image name || image id> - запустить контейнер из указанного образа
+docker run -it <image name || image id> - запустить контейнер в интерактивном режиме
+
+# менеджмент
+
+docker rm <container name || container id> - удалить контейнер
+docker container prune - удалить все незапущенные контейнеры
+
+
+# BUILDS
+docker build . - собрать образ по инструкции из докерфайла в текущей директории
