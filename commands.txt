@@ -9,10 +9,13 @@ docker images - показывает существующие образы
 
 docker ps - показывает список запущенных контейнеров
 docker ps -a - показывает список всех контейнеров (запущенных и нет)
-# запуск
+
+# запуск и остановка
 
 docker run <image name || image id> - запустить контейнер из указанного образа
 docker run -it <image name || image id> - запустить контейнер в интерактивном режиме
+docker run -p <host port>:<docker port> <image name || image id> - запустить контейнер с пробросом портов
+docker stop <container name || container id> - остановить запущенный контейнер
 
 # менеджмент
 
