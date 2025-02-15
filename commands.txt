@@ -1,5 +1,9 @@
 # IMAGES
-docker images - показывает существующие образы
+docker images || docker image ls - показывает существующие образы
+docker rmi <image name || image id> - удалить образ / образы (можно указать несколько образов через пробел)
+docker image prune - удалить все неиспользуемые образы
+docker image inspect <image name || image id> - посмотреть подробную информацию об образе
+
 
 
 
@@ -16,12 +20,27 @@ docker run <image name || image id> - запустить контейнер из
 docker run -it <image name || image id> - запустить контейнер в интерактивном режиме
 docker run -p <host port>:<docker port> <image name || image id> - запустить контейнер с пробросом портов
 docker stop <container name || container id> - остановить запущенный контейнер
+docker run -d <image name || image id> - запустить контейнер в детачт режиме (с непривязанной консолью)
+docker run  --name <custom name> <image name || image id> - запустить контейнер с кастомным именем
+docker run --rm <image name || image id> - после остановки контейнера он будет автоматически удален
+docker run -e <env name>=<env value> <image name || image id> - запустить контейнер с определенным значением переменной
+docker run --env-file <file path> <image name || image id> - запустить контейнер со значением переменных из указанного файла
+
 
 # менеджмент
 
 docker rm <container name || container id> - удалить контейнер
 docker container prune - удалить все незапущенные контейнеры
 
+# операции
+docker attach <container name || container id> - подключиться к консоли контейнера
+docker logs <container name || container id> - посмотреть логи контейнера
+
 
 # BUILDS
 docker build . - собрать образ по инструкции из докерфайла в текущей директории
+docker build -t <custom name> - собрать образ с кастомным именем
+docker build -t <custom name>:<tag> - собрать образ с кастомным именем и определенным тегом
+
+# DOCKER HUB
+docker push <repository name>/<image name>:<tag> - запушить образ в удаленный репозиторий на докерхабе
