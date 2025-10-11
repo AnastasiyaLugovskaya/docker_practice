@@ -20,6 +20,10 @@ docker run <image name || image id> - запустить контейнер из
 docker run -it <image name || image id> - запустить контейнер в интерактивном режиме
 docker run -p <host port>:<docker port> <image name || image id> - запустить контейнер с пробросом портов
 docker stop <container name || container id> - остановить запущенный контейнер
+docker start <container name || container id> - запустить остановленный контейнер
+docker restart <container name || container id> - перезапустить контейнер
+docker pause <container name || container id> - приостановить контейнер
+docker unpause <container name || container id> - возобновить работу приостановленного контейнера
 docker run -d <image name || image id> - запустить контейнер в детачт режиме (с непривязанной консолью)
 docker run  --name <custom name> <image name || image id> - запустить контейнер с кастомным именем
 docker run --rm <image name || image id> - после остановки контейнера он будет автоматически удален
