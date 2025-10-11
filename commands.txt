@@ -35,6 +35,7 @@ docker run --restart=<strategy> ... - запустить контейнер, у�
     ... always - всегда перезапускать при выходе из контейнера
     ... unless-stopped - всегда перезагружать кроме явной остановки
     ... on-failure[:max-retry] - перезапускать только в случае сбоя
+docker exec -it <container name || container id> /bin/bash - подключиться к запущенному контейнеру
 
 
 
