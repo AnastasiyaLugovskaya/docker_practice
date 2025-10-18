@@ -47,6 +47,9 @@ docker container prune - удалить все незапущенные конт
 # операции
 docker attach <container name || container id> - подключиться к консоли контейнера
 docker logs <container name || container id> - посмотреть логи контейнера
+docker logs --tail 100 <container name || container id> - посмотреть последние 100 строк логов контейнера
+docker logs -f <container name || container id> - смотреть логи контейнера в реальном времени
+docker logs --since <timestamp> <container name || container id> - посмотреть логи контейнера, начиная с определенного времени
 
 
 # BUILDS
@@ -66,7 +69,14 @@ docker push <repository name>/<image name>:<tag> - запушить образ �
 
 # DOCKER COMPOSE
 docker-compose up -d - разворачивает стек из файла докер-компауз текущей директории
+docker-compose -f <file path> up -d - разворачивает стек из указанного файла докер-компауз
 docker-compose down - останавливает стек и удаляет все контейнеры из сети
+docker-compose -f <file path> down - останавливает стек из указанного файла докер-компауз и удаляет все контейнеры из сети
 docker-compose ps - показывает контейнеры, за которые отвечает докер-компауз
 docker-compose logs - общий пулл логов поднятого стека докер-компауз
 docker-compose up -d --scale vote=3 - управление количеством реплик определенной службы
+
+# NETWORKS
+docker network ls - вывести список сетей
+docker network create <network name> - создать сеть
+docker --net <network name> ... - запуск контейнера в определенной сети
